@@ -24,4 +24,27 @@ $(document).ready(function () {
     }
     displayToDolistItems(toDoList.list);
   });
+
+  $("#edit").click(function () {
+    const name = $(".input").val();
+    if (name) {
+      toDoList.edit(editId, name);
+      $(".input").val("");
+      $("#add").prop("disabled", false);
+      $("#edit").prop("disabled", true);
+    }
+    displayToDolistItems(toDoList.list);
+  });
+  $("body").on("click", ".edit", function () {
+    const text = $(this).prev().text();
+    editId = +$(this).data("id");
+    $(".input").val(text);
+    $("#add").prop("disabled", true);
+    $("#edit").prop("disabled", false);
+  });
+  $("body").on("click", ".delete", function () {
+    const id = +$(this).data("id");
+    toDoList.remove(id);
+    displayToDolistItems(toDoList.list);
+  });
 });
