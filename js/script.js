@@ -5,13 +5,9 @@ $(document).ready(function () {
     list.forEach((itemList) => {
       allListItems += `
             <li class="list__item">
-            <div class = "list__item-div">
-            <div class = "list__item-div-span">
               <span class="list__item-text">${itemList.name}</span>
-              </div>
               <button class="edit" data-id="${itemList.id}"><i class="far fa-edit"></i></button>
               <button class="delete" data-id="${itemList.id}"><i class="far fa-trash-alt"></i></button>
-              </div>
             </li>`;
     });
     $(".list").html(allListItems);
@@ -20,8 +16,7 @@ $(document).ready(function () {
   displayToDolistItems(toDoList.list);
   let editId = null;
   const addButton = document.querySelector("#add");
-  addButton.addEventListener("click", function (event) {
-    event.preventDefault();
+  addButton.addEventListener("click", function () {
     const name = document.querySelector(".input").value;
     if (name) {
       toDoList.create(name);
