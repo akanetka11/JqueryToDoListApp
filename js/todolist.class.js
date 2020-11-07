@@ -10,4 +10,13 @@ class ToDoList {
     }
     this.list.push({ id, name });
   }
+  //редактирую элемент
+  edit(id, newValue) {
+    this.list = this.list.map((item) => {
+      if (item.id === id) {
+        item.name = newValue;
+      }
+      return item;
+    });
+  }
 }
