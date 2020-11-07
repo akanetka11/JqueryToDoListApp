@@ -19,4 +19,8 @@ class ToDoList {
       return item;
     });
   }
+  // Удаляю элемент по id
+  remove(id) {
+    this.list = this.list.filter((item) => item.id !== id);
+  }
 }
