@@ -55,13 +55,22 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+#add:focus {
+  outline: none;
+}
 #edit {
   cursor: pointer;
-  border: 1px solid #42d6b2;
+  border: 1px solid #fafafa;
   border-radius: 100%;
   width: 35px;
   height: 35px;
-  background-color: #42d6b2;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: url(../img/Vector\ 6.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#edit:focus {
+  outline: none;
 }
 .form_add {
   display: flex;
@@ -100,6 +109,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.edit:focus {
+  outline: none;
+}
 .delete {
   cursor: pointer;
   border: 1px solid #fafafa;
@@ -110,4 +122,7 @@ body {
   background-image: url(../img/Vector\ 7.png);
   background-position: center;
   background-repeat: no-repeat;
+}
+.delete:focus {
+  outline: none;
 }
