@@ -30,7 +30,8 @@ $(document).ready(function () {
     displayToDolistItems(toDoList.list);
   });
 
-  $("#edit").click(function () {
+  $("#edit").click(function (event) {
+    event.preventDefault();
     const name = $(".input").val();
     if (name) {
       toDoList.edit(editId, name);
@@ -40,14 +41,16 @@ $(document).ready(function () {
     }
     displayToDolistItems(toDoList.list);
   });
-  $("body").on("click", ".edit", function () {
+  $("body").on("click", ".edit", function (event) {
+    event.preventDefault();
     const text = $(this).prev().text();
     editId = +$(this).data("id");
     $(".input").val(text);
     $("#add").prop("disabled", true);
     $("#edit").prop("disabled", false);
   });
-  $("body").on("click", ".delete", function () {
+  $("body").on("click", ".delete", function (event) {
+    event.preventDefault();
     const id = +$(this).data("id");
     toDoList.remove(id);
     displayToDolistItems(toDoList.list);
